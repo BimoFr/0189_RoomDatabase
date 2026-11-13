@@ -95,3 +95,20 @@ fun BodyHome(
         }
     }
 }
+
+@Composable
+fun ListSiswa(
+    itemSiswa : List<Siswa>,
+    modifier: Modifier = Modifier
+){
+    LazyColumn(modifier = Modifier){
+        items(items = itemSiswa, key = {it.id}){
+                person ->
+            DataSiswa(
+                siswa = person,
+                modifier = Modifier
+                    .padding(dimensionResource(id = R.dimen.padding_small))
+            )
+        }
+    }
+}
